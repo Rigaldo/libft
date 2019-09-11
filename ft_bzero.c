@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:59:49 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:03:02 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 01:08:36 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 01:37:09 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_bzero(void *dest, size_t lenght)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*sym;
 
+	sym = (unsigned char *)dest;
 	i = 0;
-	if (s)
-	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-		ft_putchar_fd('\n', fd);
-	}
+	while (i < lenght)
+		sym[i++] = '\0';
 }

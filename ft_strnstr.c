@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:59:49 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:03:02 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 02:30:22 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 02:33:34 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strnstr(char const *s1, char const *s2, size_t len)
 {
-	size_t	i;
+	size_t	rez;
+	size_t	j;
 
-	i = 0;
-	if (s)
+	rez = 0;
+	if (s2[0] == '\0')
+		return ((char *)s1);
+	while (s1[rez] && rez < len)
 	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-		ft_putchar_fd('\n', fd);
+		if (s1[rez] == s2[0])
+		{
+			j = 1;
+			while (s1[rez + j] && s2[j] && s1[rez + j] == s2[j]
+				&& rez + j < len)
+				j++;
+			if (s2[j] == '\0')
+				return ((char *)&(s1[rez]));
+		}
+		rez++;
 	}
+	return (NULL);
 }

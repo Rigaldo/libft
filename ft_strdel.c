@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:59:49 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:03:02 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 05:06:12 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 05:45:47 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_strdel(char **as)
 {
-	size_t	i;
-
-	i = 0;
-	if (s)
+	if (as)
 	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-		ft_putchar_fd('\n', fd);
+		free(*as);
+		*as = NULL;
 	}
 }

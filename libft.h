@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 12:40:17 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/06 07:58:36 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/11 06:57:02 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,26 @@ char	*ft_strcat(char *dest, char const *src);
 char	*ft_strncat(char *dest, char const *src, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t len);
 int		ft_atoi(char const *s);
+void	ft_bzero(void *dest, size_t lenght);
+char	*ft_strchr(const char *str, int ch);
+char	*ft_strrchr(const char *str, int ch);
+char	*ft_strstr(char const *s1, char const *s2);
+char	*ft_strnstr(char const *s1, char const *s2, size_t len);
+int		ft_toupper(int ch);
+int		ft_tolower(int ch);
+char	*ft_itoa(int n);
+void	ft_strclr(char *s);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_memdel(void **ap);
+void	*ft_memalloc(size_t size);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
 #endif

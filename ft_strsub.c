@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:59:49 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:03:02 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 06:12:37 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 06:18:28 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	char	*rez;
 
+	if (!(s) || start > (unsigned int)ft_strlen(s))
+		return (NULL);
+	if (!(rez = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	i = 0;
-	if (s)
+	j = (size_t)start;
+	while (s[j] && i < len)
 	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-		ft_putchar_fd('\n', fd);
+		rez[i] = s[j];
+		i++;
+		j++;
 	}
+	rez[i] = '\0';
+	return (rez);
 }

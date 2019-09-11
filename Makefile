@@ -6,7 +6,7 @@
 #    By: cburns <cburns@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 12:51:48 by cburns            #+#    #+#              #
-#    Updated: 2019/09/06 07:58:48 by cburns           ###   ########.fr        #
+#    Updated: 2019/09/11 06:57:03 by cburns           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,28 @@ SRCS=	./ft_putendl.c		\
 		./ft_strncat.c		\
 		./ft_strlcat.c		\
 		./ft_atoi.c			\
+		./ft_bzero.c		\
+		./ft_strchr.c		\
+		./ft_strrchr.c		\
+		./ft_strstr.c		\
+		./ft_strnstr.c		\
+		./ft_toupper.c		\
+		./ft_tolower.c		\
+		./ft_itoa.c			\
+		./ft_strclr.c		\
+		./ft_strnew.c		\
+		./ft_strdel.c		\
+		./ft_memdel.c		\
+		./ft_memalloc.c		\
+		./ft_striter.c		\
+		./ft_striteri.c		\
+		./ft_strmap.c		\
+		./ft_strmapi.c		\
+		./ft_strequ.c		\
+		./ft_strnequ.c		\
+		./ft_strsub.c		\
+		./ft_strjoin.c		\
+		./ft_strtrim.c		\
 		
 OBJ=$(SRCS:.c=.o)
 

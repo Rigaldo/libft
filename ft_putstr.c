@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cburns <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 21:42:09 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/05 12:48:33 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/11 01:01:22 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_putstr(char const *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
+	if (s)
+		while (s[i])
+			ft_putchar(s[i++]);
 }

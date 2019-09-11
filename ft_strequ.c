@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:59:49 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:03:02 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 05:58:00 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 06:02:55 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	size_t	i;
 
+	if (!(s1) || !(s2))
+		return (0);
 	i = 0;
-	if (s)
+	while (s1[i] && s2[i])
 	{
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-		ft_putchar_fd('\n', fd);
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
 	}
+	if (s1[i] || s2[i])
+		return (0);
+	return (1);
 }

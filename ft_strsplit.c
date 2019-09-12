@@ -6,15 +6,15 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 12:26:50 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 13:21:48 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/12 13:51:51 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	int			words;
+	size_t		words;
 	size_t		i;
 
 	i = 1;
@@ -56,12 +56,25 @@ static char		*ft_new_word(const char *s, char c, size_t *i)
 	return (str);
 }
 
+static void		ft_free_mass(char **mass, size_t i)
+{
+	if (i > 0)
+	{
+		while (i > 0)
+		{
+			i--;
+			free(mass[i]);
+		}
+	}
+	free(mass);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t		i;
+	size_t		count;
+	size_t		words;
 	char		**mass;
-	int			words;
-	int			count;
 
 	if (!s)
 		return (NULL);
@@ -71,8 +84,14 @@ char			**ft_strsplit(char const *s, char c)
 	count = 0;
 	i = 0;
 	while (count < words - 1)
-		if (!(mass[count++] = ft_new_word(s, c, &i)))
+	{
+		if (!(mass[count] = ft_new_word(s, c, &i)))
+		{
+			ft_free_mass(mass, count);
 			return (NULL);
+		}
+		count++;
+	}
 	mass[count] = NULL;
 	return (mass);
 }

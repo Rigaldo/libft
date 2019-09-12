@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 05:00:56 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 05:04:18 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/12 12:20:39 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnew(size_t size)
 {
 	char	*s;
 
+	if (size == (size_t)-1)
+		return (NULL);
 	if (!(s = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	while (size > 0)

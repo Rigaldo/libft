@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 22:01:54 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:01:55 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/12 12:24:22 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	size_t	i;
 
 	i = 0;
-	if (s)
+	if (s && fd >= 0)
 		while (s[i])
 			ft_putchar_fd(s[i++], fd);
 }

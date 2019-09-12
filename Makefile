@@ -6,17 +6,17 @@
 #    By: cburns <cburns@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 12:51:48 by cburns            #+#    #+#              #
-#    Updated: 2019/09/11 17:31:30 by cburns           ###   ########.fr        #
+#    Updated: 2019/09/12 13:10:43 by cburns           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=gcc
+CC = gcc -Wall -Wextra -Werror -I $(HEAD)
 
-FLAGS=-Wall -Wextra -Werror
+NAME = libft.a
 
-NAME=libft.a
+HEAD = ./libft.h
 
-SRCS=	./ft_putendl.c		\
+SRCS =	./ft_putendl.c		\
 		./ft_putstr.c		\
 		./ft_strlen.c		\
 		./ft_putendl_fd.c	\
@@ -69,19 +69,23 @@ SRCS=	./ft_putendl.c		\
 		./ft_memchr.c		\
 		./ft_memcmp.c		\
 		
-OBJ=$(SRCS:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: $(SRCS) $(NAME)
 
-$(NAME):
-	@gcc -Wall -Wextra -Werror -c $(SRCS)
-	@ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	@ar rc $@ $^
 	@ranlib $(NAME)
 
+%.o: %.c $(HEAD)
+	@$(CC) -o $@ -c $<
+
 clean:
-	@rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

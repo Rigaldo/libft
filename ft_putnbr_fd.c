@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cburns <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 13:01:33 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/05 14:42:10 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/12 12:25:25 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putnbr_fd(int n, int fd)
 	int		num;
 
 	num = n;
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2", fd);

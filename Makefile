@@ -6,9 +6,13 @@
 #    By: cburns <cburns@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 12:51:48 by cburns            #+#    #+#              #
-#    Updated: 2019/09/11 06:57:03 by cburns           ###   ########.fr        #
+#    Updated: 2019/09/11 17:31:30 by cburns           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+CC=gcc
+
+FLAGS=-Wall -Wextra -Werror
 
 NAME=libft.a
 
@@ -58,6 +62,12 @@ SRCS=	./ft_putendl.c		\
 		./ft_strsub.c		\
 		./ft_strjoin.c		\
 		./ft_strtrim.c		\
+		./ft_strsplit.c		\
+		./ft_memcpy.c		\
+		./ft_memccpy.c		\
+		./ft_memmove.c		\
+		./ft_memchr.c		\
+		./ft_memcmp.c		\
 		
 OBJ=$(SRCS:.c=.o)
 

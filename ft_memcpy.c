@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 02:06:50 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 12:31:15 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/11 13:22:03 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/11 13:54:47 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t n)
+void				*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*sym;
 	size_t			i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-	sym = (unsigned char *)dest;
+	if (!(dest) && !(src) && n)
+		return (NULL);
+	s1 = (unsigned char *)dest;
+	s2 = (unsigned char *)src;
 	i = 0;
 	while (i < n)
-		sym[i++] = (unsigned char)c;
+	{
+		s1[i] = s2[i];
+		i++;
+	}
 	return (dest);
 }

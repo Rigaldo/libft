@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcountwords.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 13:23:45 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/14 18:21:49 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/14 18:42:33 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/14 18:42:37 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+size_t	ft_strcountwords(char const *s, char c)
 {
-	size_t	i;
+	size_t		words;
+	size_t		i;
 
-	i = 0;
+	i = 1;
+	words = 1;
 	while (s[i])
+	{
+		if ((s[i] == c && s[i - 1] != c) || (!(s[i + 1]) && s[i] != c))
+			words++;
 		i++;
-	return (i);
+	}
+	return (words);
 }

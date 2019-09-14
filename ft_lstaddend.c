@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 13:23:45 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/14 18:21:49 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/14 18:41:27 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/14 18:49:40 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+void		ft_lstaddend(t_list **head, t_list *node)
 {
-	size_t	i;
+	t_list	*current;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!(*head))
+		*head = node;
+	else
+	{
+		current = *head;
+		while (current->next)
+			current = current->next;
+		current->next = node;
+	}
 }

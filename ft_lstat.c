@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 13:23:45 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/14 18:21:49 by cburns           ###   ########.fr       */
+/*   Created: 2019/09/14 21:39:13 by cburns            #+#    #+#             */
+/*   Updated: 2019/09/14 21:43:41 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char const *s)
+t_list		*ft_lstat(t_list *head, size_t n)
 {
-	size_t	i;
+	size_t	count;
+	t_list	*current;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!head)
+		return (NULL);
+	count = 0;
+	while (count < n)
+	{
+		if (!current)
+			return (NULL);
+		current = current->next;
+		count++;
+	}
+	return (current);
 }

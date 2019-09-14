@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 05:42:30 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 05:46:17 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:15:53 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
-	if (!(s) || !(f))
+	if (!s || !f)
 		return ;
 	i = 0;
 	while (s[i])

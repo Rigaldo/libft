@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 14:04:34 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/13 15:23:56 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:08:24 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (!(alst) || !(new))
+	if (!alst || !new)
 		return ;
 	new->next = *alst;
 	*alst = new;

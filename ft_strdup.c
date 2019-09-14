@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 13:27:54 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/06 07:26:00 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:15:06 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(char const *s)
 	size_t	i;
 
 	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!(dest))
+	if (!dest)
 		return (NULL);
 	i = 0;
 	while (s[i])

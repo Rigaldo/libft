@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 05:55:16 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 05:56:51 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:16:45 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*rez;
 	size_t	i;
 
-	if (!(s) || !(f))
+	if (!s || !f)
 		return (NULL);
 	if (!(rez = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);

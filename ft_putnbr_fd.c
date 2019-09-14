@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 13:01:33 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/12 12:25:25 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:12:35 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n == -2147483648)
 	{
-		ft_putstr_fd("-2", fd);
-		num = 147483648;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
 	if (num < 0)
 	{

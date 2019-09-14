@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 01:21:58 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 01:36:40 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:13:52 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strchr(const char *str, int ch)
 	while (rez[i])
 	{
 		if (rez[i] == ch)
-			return (&(rez[i]));
+			return (&rez[i]);
 		i++;
 	}
 	if (ch == 0)
-		return (&(rez[i]));
+		return (&rez[i]);
 	return (NULL);
 }

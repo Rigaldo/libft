@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 13:09:50 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/13 15:24:14 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:07:56 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!(alst) || !(del))
+	if (!alst || !del)
 		return ;
 	del((*alst)->content, (*alst)->content_size);
 	free(*alst);

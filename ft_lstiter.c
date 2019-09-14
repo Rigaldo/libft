@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 14:12:19 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/13 15:25:21 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:07:57 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (!(lst) || !(f))
+	if (!lst || !f)
 		return ;
 	while (lst)
 	{

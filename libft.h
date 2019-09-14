@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 12:40:17 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/14 21:54:13 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:03:08 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *dest, int c, size_t n);
-void				ft_lstaddend(t_list **head, t_list *node);
+void				ft_lstaddend(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -86,5 +86,5 @@ size_t				ft_lstsize(t_list *lst);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstat(t_list *head, size_t n);
+t_list				*ft_lstat(t_list *alst, size_t n);
 #endif

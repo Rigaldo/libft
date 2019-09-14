@@ -6,7 +6,7 @@
 /*   By: cburns <cburns@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 06:12:37 by cburns            #+#    #+#             */
-/*   Updated: 2019/09/11 06:18:28 by cburns           ###   ########.fr       */
+/*   Updated: 2019/09/14 22:17:45 by cburns           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*rez;
 
-	if (!(s) || start > (unsigned int)ft_strlen(s))
+	if (!s || start > (unsigned int)ft_strlen(s))
 		return (NULL);
 	if (!(rez = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
